@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import { useRoute } from "vue-router";
 import { useStore } from "vuex";
-import PostCard from "./PostCard.vue";
+import PostCard from "./components/PostCard.vue";
 
 const store = useStore();
 const route = useRoute();

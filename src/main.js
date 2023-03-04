@@ -1,9 +1,9 @@
 import { createApp } from "vue";
 import "./style.css";
 import App from "./App.vue";
-import PostsPage from "./components/PostsPage.vue";
-import UsersPage from "./components/UsersPage.vue";
-import CommentsPage from "./components/CommentsPage.vue";
+import PostsPage from "./pages/PostsPage.vue";
+import UsersPage from "./pages/UsersPage.vue";
+import CommentsPage from "./pages/CommentsPage.vue";
 import { store } from "./store/store";
 import { createRouter, createWebHistory } from "vue-router";
 

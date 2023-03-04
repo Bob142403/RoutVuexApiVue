@@ -1,5 +1,5 @@
 <script setup>
-import Card from "./UserCard.vue";
+import Card from "./components/UserCard.vue";
 import { computed, ref } from "vue";
 import { useStore } from "vuex";
 const store = useStore();
