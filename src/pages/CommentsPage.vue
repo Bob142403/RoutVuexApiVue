@@ -20,7 +20,7 @@ const userInfo = computed(() => store.state.comments.userInfo);
   <div class="post-with-comment">
     <div class="post-info">
       <h1>{{ postInfo[0].title }}</h1>
-      Author: {{ userInfo[0].name }}
+      Author: {{ userInfo.name }}
       <p style="font-weight: bold">{{ postInfo[0].body }}</p>
     </div>
     <hr style="color: aliceblue" />

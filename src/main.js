@@ -10,6 +10,7 @@ import { createRouter, createWebHistory } from "vue-router";
 const routes = [
   { path: "/", component: UsersPage },
   {
+    name: "posts",
     path: "/posts/:userId",
     component: PostsPage,
   },

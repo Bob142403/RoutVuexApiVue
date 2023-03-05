@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import { useRoute } from "vue-router";
 import { useStore } from "vuex";
-import PostCard from "./components/PostCard.vue";
+import PostCard from "../components/PostCard.vue";
 
 const store = useStore();
 const route = useRoute();
@@ -19,7 +19,6 @@ const posts = computed(() => store.state.posts.posts);
       <PostCard :body="post.body" :title="post.title" :id="post.id" />
     </template>
   </div>
-  <router-view></router-view>
 </template>
 
 <style scoped>

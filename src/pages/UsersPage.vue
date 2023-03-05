@@ -1,10 +1,8 @@
 <script setup>
-import Card from "./components/UserCard.vue";
-import { computed, ref } from "vue";
+import UserCard from "../components/UserCard.vue";
+import { computed } from "vue";
 import { useStore } from "vuex";
 const store = useStore();
-
-const items = ref([{ message: "Foo" }, { message: "Bar" }]);
 
 const users = computed(() => {
   return store.state.users.users;
@@ -14,7 +12,7 @@ const users = computed(() => {
 <template>
   <div class="users-page">
     <template v-for="user of users" :key="user.id">
-      <Card :userName="user.name" :userId="user.id" />
+      <UserCard :userName="user.name" :userId="user.id" />
     </template>
   </div>
 </template>

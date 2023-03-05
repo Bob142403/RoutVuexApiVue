@@ -1,22 +1,22 @@
 import { commentsApi } from "../../services/comment-api";
 import { postsApi } from "../../services/post-api";
-import { usersApi } from "../../services/user-api";
 
 export default {
   actions: {
-    async fetchCommentsByPostId({ commit, state }, postId) {
+    async fetchCommentsByPostId(ctx, postId) {
       await commentsApi.getCommentsByPostId(postId).then((comments) => {
-        commit("setComments", comments);
+        ctx.commit("setComments", comments);
       });
       await postsApi.getPostByPostId(postId).then((post) => {
-        commit("setPostInfo", post);
+        ctx.commit("setPostInfo", post);
       });
-      await usersApi.getUserById(state.postInfo[0].userId).then((user) => {
-        commit("setUserInfo", user);
-      });
+      await ctx.commit(
+        "setUserInfo",
+        ctx.getters.getUserById(ctx.state.postInfo[0].userId)
+      );
     },
   },
-  state: { comments: [], postInfo: [{}], userInfo: [{}] },
+  state: { comments: [], postInfo: [{}], userInfo: {} },
   mutations: {
     setComments(state, comments) {
       state.comments = comments;

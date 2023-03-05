@@ -11,7 +11,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="card" @click="router.push(`/posts/${userId}`)">
+  <div class="card" @click="router.push({ name: 'posts', params: { userId } })">
     <div class="card-body">{{ userName }}</div>
   </div>
 </template>
